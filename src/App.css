@@ -1,0 +1,172 @@
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+body {
+  /* background: #FBFCFD; */
+  background: #dcdcdc !important;
+}
+
+/* Landing Page */
+.info-page {
+  width: 40%;
+  height: 450px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 3px 10px darkgrey;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.link-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #026edc;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-card {
+  width: 350px;
+  height: fit-content;
+  padding: 10px;
+  margin: auto;
+}
+
+/* Main App Page  */
+.main-area {
+  width: fit-content;
+  background: white;
+  margin: 45px !important;
+  box-shadow: 0px 0px 5px 10px gray;
+}
+
+.page-container {
+  margin: 50px 70px;
+  background: #ffffff;
+}
+
+.doctor-info-container {
+  width: 50%;
+  min-width: 300px;
+  margin: 20px;
+  min-height: 550px;
+  border-right: 1px solid lightgray;
+}
+
+.profile-pic img {
+  height: 50px;
+  width: 50px;
+}
+
+.hospital-name {
+  color: #4d5155;
+}
+
+.duration {
+  padding: 10px 0px;
+}
+
+.details {
+  padding: 10px 0px;
+}
+
+.video-details {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+  margin-top: -25px;
+}
+
+.message {
+  color: #7d7f82;
+}
+
+/* React Calendar Component */
+
+.react-calendar {
+  border: none !important;
+}
+
+.css-2b097c-container {
+  width: 205px;
+}
+
+/* Book appointment Form Page  */
+
+.form-container {
+  width: 60%;
+  height: 650px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 3px 10px darkgrey;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  top: 10%;
+  bottom: 10%;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.form-container input textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 90%;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.form-container label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: #303030;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+/* Time Slots Area */
+
+.slots-colum {
+  min-height: 100px;
+  height: inherit;
+  align-items: center;
+  /* justify-content: center; */
+  display: flex;
+}
+
+/* Appointment booked Page */
+
+.booked-msg-container {
+  margin: auto;
+  height: auto;
+  margin-top: 200px !important;
+  font-family: "Times New Roman";
+  line-height: 1.5;
+}

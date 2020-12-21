@@ -19,7 +19,7 @@ function DoctorInfo() {
     return (
         <div className="col-12 col-sm-12 col-lg-2 doctor-info-container m-0 p-5">
             <div className="mb-4">
-                <h4> <button className="link-btn" onClick={() => history.push('/')} to='/' ><i className="fas fa-arrow-left ml-2"></i> </button> </h4>
+                <h4> <button className="link-btn" onClick={() => history.push('/user')} ><i className="fas fa-arrow-left ml-2"></i> </button> </h4>
             </div>
             <div className="profile-pic">
                 <img src={doctorPic} className="rounded-circle" alt="Cinque Terre"></img>

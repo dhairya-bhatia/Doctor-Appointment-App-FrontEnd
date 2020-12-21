@@ -1,21 +1,28 @@
-import React from 'react';
-import LandingPage from '../components/landingPage';
-import mainAppPage from '../components/mainAppPage';
-import bookAppointmentForm from '../components/bookAppointmentForm';
-import appointmentBooked from '../components/appointmentBookedPage';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
+import { Switch, Redirect } from "react-router-dom";
+import routes from "../AuthenticatedRouting/authenticatedRoutes";
+import AuthProtectedRoutes from "../AuthenticatedRouting/AuthProtectedRoutes";
+import { ConnectedRouter } from "connected-react-router";
+import { history } from "../redux/store";
 
 const AppNavigator = () => {
-    return ( 
-        <Router>
-            <Switch>
-                <Route path="/" exact component={LandingPage} />
-                <Route path="/showAppointments" exact component={mainAppPage} />
-                <Route path="/bookAppointments" exact component={bookAppointmentForm} />
-                <Route path="/appointmentBooked" exact component={appointmentBooked} />
-            </Switch>
-        </Router>
-     );
-}
- 
+  return (
+    <ConnectedRouter history={history}>
+      <Switch>
+        <Redirect exact from="/" to="/login" />
+        {routes.map((route) => {
+          return (
+            <AuthProtectedRoutes
+              key={route.id}
+              path={route.path}
+              exact={route.exact}
+              component={route.component}
+            />
+          );
+        })}
+      </Switch>
+    </ConnectedRouter>
+  );
+};
+
 export default AppNavigator;

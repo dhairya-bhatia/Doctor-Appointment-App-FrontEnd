@@ -25,7 +25,7 @@ const BookAppointmentForm = (props) => {
   };
   useEffect(() => {
     if (apiStatus === "SUCCESS") {
-      history.push("appointmentBooked", {
+      history.push("/user/appointmentBooked", {
         selectedDate: moment(lastAppointmentBooked.date).toDate(),
         patientName: lastAppointmentBooked.patientName,
         patientEmail: lastAppointmentBooked.patientEmail,
@@ -37,7 +37,7 @@ const BookAppointmentForm = (props) => {
 
   useEffect(() => {
     if (lastAppointmentBooked.date && moment(props.location.state.selectedDate).format("DD-MM-YYYY") === moment(lastAppointmentBooked.date).format("DD-MM-YYYY")) {
-      history.push('/');
+      history.push('/user');
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

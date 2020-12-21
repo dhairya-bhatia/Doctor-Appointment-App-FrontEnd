@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, select, takeEvery } from "redux-saga/effects";
 import {
   getAppointmentsSuccess,
   getAppointmentsError,
@@ -15,7 +15,9 @@ import {
 
 function* fetchAppointments() {
   try {
-    const appointmentsData = yield call(getAppointmentsFromAPI);
+    let currentState = yield select();
+    let accessToken = currentState?.auth?.accessToken;
+    const appointmentsData = yield call(getAppointmentsFromAPI, accessToken);
     yield put(getAppointmentsSuccess(appointmentsData));
   } catch (error) {
     yield put(alert("Something went wrong"));
@@ -25,6 +27,9 @@ function* fetchAppointments() {
 
 function* saveAppointment(payload) {
   try {
+    let currentState = yield select();
+    let accessToken = currentState?.auth?.accessToken;
+    payload.accessToken = accessToken;
     const appointmentObj = yield call(saveAppointmentData, payload);
     yield put(saveAppointmentSuccess(appointmentObj));
   } catch (error) {
